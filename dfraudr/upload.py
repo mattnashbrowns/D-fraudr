@@ -1,7 +1,8 @@
 import os
-from flask import Flask, flash, request, redirect, url_for, send_from_directory, Blueprint
+from flask import Flask, flash, request, redirect, url_for, send_from_directory, Blueprint, render_template
 from werkzeug.utils import secure_filename
 from werkzeug.exceptions import abort
+import benford
 
 UPLOAD_FOLDER = 'instance/uploads/'
 ALLOWED_EXTENSIONS = {'txt', 'csv', 'tsv'}
@@ -30,17 +31,14 @@ def upload_file():
         if file and allowed_file(file.filename):
             filename = secure_filename(file.filename)
             file.save(os.path.join(app.config['UPLOAD_FOLDER'], filename))
-            return redirect(request.url)
-    return '''
-    <!doctype html>
-    <title>Upload new File</title>
-    <h1>Upload new File</h1>
-    <form method=post enctype=multipart/form-data>
-      <input type=file name=file>
-      <input type=submit value=Upload>
-    </form>
-    '''
+            return redirect(url_for('file_process'))
+    return render_template('upload.html')
 
+    
+#@bp.route('/process', methods=['POST'])
+#def process_file(filename):
+  
+  
 @bp.route('/uploads/<name>')
 def download_file(name):
   return send_from_directory(app.config["UPLOAD_FOLDER"], name)
