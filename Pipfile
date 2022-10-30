@@ -10,6 +10,8 @@ numpy = "*"
 psycopg2 = "*"
 flask-sqlalchemy = "*"
 flask-migrate = "*"
+pytest = "*"
+jupyter = "*"
 
 [dev-packages]
 
