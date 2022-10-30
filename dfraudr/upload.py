@@ -3,11 +3,11 @@ from flask import Flask, flash, request, redirect, url_for, send_from_directory,
 from werkzeug.utils import secure_filename
 from werkzeug.exceptions import abort
 
-UPLOAD_FOLDER = 'instance/uploads'
+UPLOAD_FOLDER = 'instance/uploads/'
 ALLOWED_EXTENSIONS = {'txt', 'csv', 'tsv'}
 
-#app = Flask(__name__)
-#app.config['UPLOAD_FOLDER'] = UPLOAD_FOLDER
+app = Flask(__name__)
+app.config['UPLOAD_FOLDER'] = UPLOAD_FOLDER
 
 bp = Blueprint('upload', __name__)
 
@@ -30,7 +30,7 @@ def upload_file():
         if file and allowed_file(file.filename):
             filename = secure_filename(file.filename)
             file.save(os.path.join(app.config['UPLOAD_FOLDER'], filename))
-            return redirect(url_for('download_file', name=filename))
+            return redirect(url_for('upload', name=filename))
     return '''
     <!doctype html>
     <title>Upload new File</title>

@@ -32,6 +32,6 @@ def create_app(test_config=None):
     
     from . import upload
     app.register_blueprint(upload.bp)
-    app.add_url_rule('/upload', endpoint='upload')
+    app.add_url_rule('/upload', endpoint='upload_file')
     
     return app
