@@ -1,0 +1,4 @@
+﻿include dfraudr/schema.sql
+graft dfraudr/static
+graft dfraudr/templates
+global-exclude *.pyc
