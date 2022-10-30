@@ -7,6 +7,9 @@ name = "pypi"
 flask = "*"
 pandas = "*"
 numpy = "*"
+psycopg2 = "*"
+flask-sqlalchemy = "*"
+flask-migrate = "*"
 
 [dev-packages]
 
