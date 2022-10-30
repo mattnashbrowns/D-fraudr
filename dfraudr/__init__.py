@@ -30,4 +30,8 @@ def create_app(test_config=None):
     from . import db
     db.init_app(app)
     
+    from . import upload
+    app.register_blueprint(upload.bp)
+    app.add_url_rule('/upload', endpoint='upload')
+    
     return app
