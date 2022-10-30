@@ -10,6 +10,7 @@ def get_db():
             database = "dfraudr",
             user = "dfraud_user",
             password = "dfraud_pass")
+        conn.set_session(autocommit=True)
         g.db = conn
         
     return g.db
@@ -30,7 +31,6 @@ def init_db():
     except psycopg2.Error as e:
         pass
     
-    db.commit()
         
 @click.command('init-db')
 def init_db_command():
