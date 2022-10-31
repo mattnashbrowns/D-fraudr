@@ -1,15 +1,17 @@
 import os
 from os.path import exists as file_exists
-from flask import Flask, flash, request, redirect, url_for, send_from_directory, Blueprint, render_template, g
+from flask import (Flask, flash, request, redirect, url_for, 
+    send_from_directory, Blueprint, render_template, g, current_app)
 from werkzeug.utils import secure_filename
 from werkzeug.exceptions import abort
 import benford
 from dfraudr.db import get_db
 import hashlib
 
+app = Flask(__name__)
+
 ALLOWED_EXTENSIONS = {'txt', 'csv', 'tsv'}
 
-app = Flask(__name__)
 
 bp = Blueprint('upload', __name__)
 
@@ -18,6 +20,7 @@ def allowed_file(filename):
 
 @bp.route('/upload', methods=['GET', 'POST'])
 def upload_file():
+    UPLOAD_LOCATION = current_app.config['UPLOAD_LOCATION']
     if request.method == 'POST':
         cur = get_db()
         file_desc = 'Untitled'
@@ -38,7 +41,7 @@ def upload_file():
             return redirect(request.url)
         if file and allowed_file(file.filename):
             filename = secure_filename(file.filename)
-            fullpath = os.path.join(app.config['UPLOAD_FOLDER'], filename)
+            fullpath = os.path.join(UPLOAD_LOCATION, filename)
             
             if file_exists(fullpath):
                 flash('File "%s" already exists!' % fullpath)
@@ -67,4 +70,4 @@ def files():
   
 @bp.route('/uploads/<name>')
 def download_file(name):
-  return send_from_directory(app.config["UPLOAD_FOLDER"], name)
+  return send_from_directory(UPLOAD_LOCATION, name)

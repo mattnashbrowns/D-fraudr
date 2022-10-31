@@ -1,14 +1,9 @@
 import os
 
-from flask import Flask
+from flask import Flask, g
 
 def create_app(test_config=None):
     app = Flask(__name__, instance_relative_config=True)
-    app.config.from_mapping(
-        SECRET_KEY='dev',
-        DATABASE=os.path.join(app.instance_path, 'dfraudr.sqlite'),
-        UPLOAD_FOLDER='instance/uploads/'
-    )
     
     if test_config is None:
         # Load the instance config when not testing
@@ -35,7 +30,10 @@ def create_app(test_config=None):
     app.register_blueprint(upload.bp)
     app.add_url_rule('/upload', endpoint='upload_file')
     
-    app.register_blueprint(analyse.bp)
-    app.add_url_rule('/analyze', endpoint='analyze_file')
+    from . import analyze
+    app.register_blueprint(analyze.bp)
+    #app.add_url_rule('/analyze', endpoint='analyze_file')
     
     return app
+
+    

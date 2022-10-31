@@ -5,15 +5,17 @@
 {% endblock %}
 
 {% block content %}
+	
     {% for file in filelist %}
 		<article class="file">
 			<div>
-				<h1><a href={{ url_for('analyze_file') }}>{{ file['filename'] }}</a></h1>
-				<h2>File ID: {{ file['id'] }}</h2>
-				<div>
-					<h3>{{ file['description'] }}</h3><br>
-					<p>{{ file['md5sum'] }}
-				</div>
+				<table class=filedetail>
+					<tr>
+						<td><h2>File ID: {{ file['id'] }}</h2>
+						<td><h1><a class="action" href="{{ url_for('analyze.analyze_file', id=file['id']) }}">{{ file['filename'] }}</a></h1>
+						<td><h3>{{ file['description'] }}</h3>
+						<td><p>{{ file['md5sum'] }}
+				</table>
 			</div>
 		</article>
 		<hr>

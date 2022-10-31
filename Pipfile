@@ -12,6 +12,7 @@ flask-sqlalchemy = "*"
 flask-migrate = "*"
 pytest = "*"
 jupyter = "*"
+python-dotenv = "*"
 
 [dev-packages]
 
