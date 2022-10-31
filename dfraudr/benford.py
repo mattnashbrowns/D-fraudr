@@ -24,10 +24,11 @@ def get_freqs(numbers,base=10):
     unique, counts = np.unique(digits, return_counts=True)
     counts_dict = dict(zip(unique,counts))
     
+    # Check for missing digits
     for x in all_digits:
         if x not in counts_dict:
             counts_dict[x] = 0
-    count_df = pd.DataFrame(counts_dict)
+            
     return counts_dict
         
     

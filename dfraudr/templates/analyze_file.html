@@ -1,0 +1,22 @@
+{% extends 'base.html' %}
+
+{% block header %}
+  <h1>{% block title %}Analyze File {{ file_record['filename'] }}{% endblock %}</h1>
+{% endblock %}
+
+{% block content %}
+	<table class="file_columns">
+		<tr class="header"><td>Name<td>Count<td>Mean<td>Std Dev<td>Min<td>Max<td>
+		{% for column in stats.columns %}
+			<tr class="row">
+				<td>{{ column }}
+				<td>{{ stats[column]['count'] }}
+				<td>{{ stats[column]['mean'] }}
+				<td>{{ stats[column]['std'] }}
+				<td>{{ stats[column]['min'] }}
+				<td>{{ stats[column]['max'] }}
+				<td><a href="{{ url_for('analyze.analyze_column', file_id=file_record['id'], column_name=column) }}">Analyze Column</a>
+			</tr>
+		{% endfor %}
+	</table>
+{% endblock %}

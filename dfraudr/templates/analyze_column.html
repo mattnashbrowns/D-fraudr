@@ -1,0 +1,26 @@
+{% extends 'base.html' %}
+
+{% block header %}
+  <h1>{% block title %}Analyze Column '{{ column_name }}'{% endblock %}</h1>
+{% endblock %}
+
+{% block content %}
+	<table class="column_detail">
+		<tr>
+			<th>
+			{% for n in range(1,10) %}
+			<th>{{ n }}
+			{% endfor %}
+		</tr>
+		<tr>
+			<td>Actual
+				{% for number in actual %}
+					<td>{{ number }}
+				{% endfor %}
+		<tr>
+			<td>Expected
+				{% for number in expected %}
+					<td>{{ number }}
+				{% endfor %}
+	</table>
+{% endblock %}

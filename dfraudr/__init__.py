@@ -32,7 +32,6 @@ def create_app(test_config=None):
     
     from . import analyze
     app.register_blueprint(analyze.bp)
-    #app.add_url_rule('/analyze', endpoint='analyze_file')
     
     return app
 
