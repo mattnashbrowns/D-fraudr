@@ -19,10 +19,11 @@ def get_probs(base=10):
 # containing the frequency of each one's occurrence in the list
 def get_freqs(numbers,base=10):
     all_digits = range(1,base)
+    
     digits = first_digits(numbers)
     unique, counts = np.unique(digits, return_counts=True)
     counts_dict = dict(zip(unique,counts))
-    freqs = []
+    
     for x in all_digits:
         if x not in counts_dict:
             counts_dict[x] = 0
