@@ -1,9 +1,8 @@
 {% extends 'base.html' %}
 
 {% block header %}
-  <h1>{% block title %}Analyze Column '{{ column_name }}'{% endblock %}</h1>
+  <h2>{% block title %}Analyze Column '{{ column_name }}'{% endblock %}</h2>
 {% endblock %}
-
 {% block content %}
 	<table class="column_detail">
 		<tr>
@@ -27,8 +26,10 @@
 				{% for verdict in is_close %}
 					<td>{{ verdict }}
 				{% endfor %}
+		<tr>
+			<td colspan=10 align='center'>
+			<div class="graph">
+					<img src='data:image/png;base64,{{ bar_img_data }}' />
+				</div>
 	</table>
-	<div class="graph">
-		<img src='data:image/png;base64,{{ bar_img_data }}' />
-	</div>
 {% endblock %}

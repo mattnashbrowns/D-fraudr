@@ -1,0 +1,71 @@
+table.column_detail {
+  font-family: "Courier New", Courier, monospace;
+  border: 2px solid #000000;
+  background-color: #EEE7DB;
+  width: 100%;
+  text-align: center;
+  border-collapse: collapse;
+}
+table.column_detail td, table.column_detail th {
+  border: 1px solid #AAAAAA;
+  padding: 3px 2px;
+}
+table.column_detail tbody td {
+  font-size: 23px;
+}
+table.column_detail tr:nth-child(even) {
+  background: #99B1F5;
+}
+table.column_detail thead {
+  background: #4741A4;
+}
+table.column_detail thead th {
+  font-size: 29px;
+  font-weight: bold;
+  color: #FFFFFF;
+  text-align: center;
+  border-left: 2px solid #020EA4;
+}
+table.column_detail thead th:first-child {
+  border-left: none;
+}
+
+table.column_detail tfoot {
+  font-size: 23px;
+  font-weight: bold;
+  color: #FFFFFF;
+  background: #4741A4;
+}
+table.column_detail tfoot td {
+  font-size: 23px;
+}
+table.column_detail tfoot .links {
+  text-align: right;
+}
+table.column_detail tfoot .links a{
+  display: inline-block;
+  background: #FFFFFF;
+  color: #A40808;
+  padding: 2px 8px;
+  border-radius: 5px;
+}
+
+h1 { 
+   color: #111; 
+   font-family: 'Helvetica Neue', sans-serif; 
+   font-size: 48px; 
+   font-weight: bold; 
+   font-style: italic;
+   letter-spacing: -1px; 
+   line-height: 1; 
+   text-align: left; }
+
+h2 { 
+   color: #111; 
+   font-family: 'Open Sans', 
+   sans-serif; 
+   font-size: 15px; 
+   font-weight: 300; 
+   line-height: 32px; 
+   margin: 0 0 72px; 
+   text-align: center; }

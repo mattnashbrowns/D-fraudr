@@ -127,6 +127,8 @@ def make_bar_plot(index, actual, expected):
     # Tighten up y'all
     fig.tight_layout()
     
+    fig.set_figwidth(12)
+    
     return fig
     
 
