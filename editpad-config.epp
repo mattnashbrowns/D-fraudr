@@ -403,12 +403,12 @@ TailInterval=0
 TailAppend=0
 
 [File7]
-DataLen=2760
-TopChar=0
-SelStart=1159
-SelStop=1159
+DataLen=4190
+TopChar=3068
+SelStart=3754
+SelStop=3754
 RectSel=0
-CaretPos=1159
+CaretPos=3754
 CaretVisible=1
 TopCharAlt=0
 SelStartAlt=0
@@ -577,12 +577,12 @@ TailInterval=0
 TailAppend=0
 
 [File10]
-DataLen=695
+DataLen=700
 TopChar=0
-SelStart=26
-SelStop=26
+SelStart=620
+SelStop=620
 RectSel=0
-CaretPos=26
+CaretPos=620
 CaretVisible=1
 TopCharAlt=0
 SelStartAlt=0
@@ -635,12 +635,12 @@ TailInterval=0
 TailAppend=0
 
 [File11]
-DataLen=482
+DataLen=665
 TopChar=0
-SelStart=457
-SelStop=457
+SelStart=642
+SelStop=642
 RectSel=0
-CaretPos=457
+CaretPos=642
 CaretVisible=1
 TopCharAlt=0
 SelStartAlt=0

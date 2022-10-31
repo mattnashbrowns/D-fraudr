@@ -13,6 +13,7 @@ flask-migrate = "*"
 pytest = "*"
 jupyter = "*"
 python-dotenv = "*"
+matplotlib = "*"
 
 [dev-packages]
 
