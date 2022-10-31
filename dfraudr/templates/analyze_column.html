@@ -22,5 +22,10 @@
 				{% for number in expected %}
 					<td>{{ number }}
 				{% endfor %}
+		<tr>
+			<td>Close?
+				{% for verdict in is_close %}
+					<td>{{ verdict }}
+				{% endfor %}
 	</table>
 {% endblock %}

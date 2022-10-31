@@ -9,6 +9,7 @@ from dfraudr.db import get_db
 from dfraudr import create_app
 import hashlib
 import pandas as pd
+import numpy as np
 import benford as bf
 
 app = Flask(__name__)
@@ -65,9 +66,12 @@ def analyze_column(file_id, column_name):
     # Get a list of the actual counts of each digit
     actual = [ freqs[x] for x in all_digits ]
     
+    is_close = np.isclose(actual, expected, rtol=.05)
+    
     return render_template('analyze_column.html', 
         actual=actual, 
-        expected=expected, 
+        expected=expected,
+        is_close=is_close,
         column_name=column_name,
         )
     
