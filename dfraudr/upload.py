@@ -7,11 +7,9 @@ import benford
 from dfraudr.db import get_db
 import hashlib
 
-UPLOAD_FOLDER = 'instance/uploads/'
 ALLOWED_EXTENSIONS = {'txt', 'csv', 'tsv'}
 
 app = Flask(__name__)
-app.config['UPLOAD_FOLDER'] = UPLOAD_FOLDER
 
 bp = Blueprint('upload', __name__)
 
@@ -21,8 +19,7 @@ def allowed_file(filename):
 @bp.route('/upload', methods=['GET', 'POST'])
 def upload_file():
     if request.method == 'POST':
-        db = get_db()
-        cur = db.cursor()
+        cur = get_db()
         file_desc = 'Untitled'
         
         # check if the post request has the file part
@@ -48,9 +45,9 @@ def upload_file():
             else:
                 file.save(fullpath)
                 flash('Saved file "%s" (%s) with checksum "%s"' % (file.filename, file_type, file_md5) )
+                cur.execute('INSERT INTO df_datafiles(filename, description) VALUES (%s,%s)', 
+                    (filename, file_desc) )
             
-            cur.execute('INSERT INTO df_datafiles(filename, description) VALUES (%s,%s)', 
-                (filename, file_desc) )
             
             return redirect(url_for('upload.files'))
     return render_template('upload.html')
@@ -58,7 +55,15 @@ def upload_file():
     
 @bp.route('/files', methods=['GET','POST'])
 def files():
-  return render_template('files.html')
+  cursor = get_db()
+  cursor.execute( 'SELECT id, filename, description, md5sum from df_datafiles' )
+  files = cursor.fetchall()
+  
+  if (files):
+    return render_template('files.html', filelist=files)    
+  else:
+    return redirect(url_for('upload_file'))
+
   
 @bp.route('/uploads/<name>')
 def download_file(name):

@@ -7,6 +7,7 @@ def create_app(test_config=None):
     app.config.from_mapping(
         SECRET_KEY='dev',
         DATABASE=os.path.join(app.instance_path, 'dfraudr.sqlite'),
+        UPLOAD_FOLDER='instance/uploads/'
     )
     
     if test_config is None:
@@ -33,5 +34,8 @@ def create_app(test_config=None):
     from . import upload
     app.register_blueprint(upload.bp)
     app.add_url_rule('/upload', endpoint='upload_file')
+    
+    app.register_blueprint(analyse.bp)
+    app.add_url_rule('/analyze', endpoint='analyze_file')
     
     return app

@@ -1,19 +1,19 @@
 import psycopg2
+import psycopg2.extras
 
 import click
 from flask import current_app, g
 
 def get_db():
-    if 'db' not in g:
-        conn = psycopg2.connect(
-            host = "localhost",
-            database = "dfraudr",
-            user = "dfraud_user",
-            password = "dfraud_pass")
-        conn.set_session(autocommit=True)
-        g.db = conn
-        
-    return g.db
+    conn = psycopg2.connect(
+        host = "localhost",
+        database = "dfraudr",
+        user = "dfraud_user",
+        password = "dfraud_pass")
+    conn.set_session(autocommit=True)
+    cur = conn.cursor(cursor_factory = psycopg2.extras.DictCursor)
+    
+    return cur
     
 def close_db(e=None):
     db = g.pop('db', None)
@@ -22,9 +22,8 @@ def close_db(e=None):
         db.close()
 
 def init_db():
-    # psycopg2 conn object
-    db = get_db()
-    cur = db.cursor()
+    # psycopg2 DictCursor object
+    cur = get_db()
     
     try:
         cur.execute(open("dfraudr/schema.sql","r").read())

@@ -1,9 +1,21 @@
 {% extends 'base.html' %}
 
 {% block header %}
-  <h1>{% block title %}Upload new file{% endblock %}</h1>
+  <h1>{% block title %}Uploaded files{% endblock %}</h1>
 {% endblock %}
 
 {% block content %}
-    <p> would list files here
+    {% for file in filelist %}
+		<article class="file">
+			<div>
+				<h1><a href={{ url_for('analyze_file') }}>{{ file['filename'] }}</a></h1>
+				<h2>File ID: {{ file['id'] }}</h2>
+				<div>
+					<h3>{{ file['description'] }}</h3><br>
+					<p>{{ file['md5sum'] }}
+				</div>
+			</div>
+		</article>
+		<hr>
+	{% endfor %}
 {% endblock %}
