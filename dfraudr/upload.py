@@ -30,9 +30,6 @@ def upload_file():
             flash('No file part')
             return redirect(request.url)
         file = request.files['file']
-        file_data = file.read()
-        file_md5 = hashlib.md5(file_data).hexdigest()
-        file_type = file.content_type
         
         # If the user does not select a file, the browser submits an
         # empty file without a filename.
@@ -43,10 +40,14 @@ def upload_file():
             filename = secure_filename(file.filename)
             fullpath = os.path.join(UPLOAD_LOCATION, filename)
             
+            
             if file_exists(fullpath):
                 flash('File "%s" already exists!' % fullpath)
             else:
                 file.save(fullpath)
+                file_data = file.read()
+                file_md5 = hashlib.md5(file_data).hexdigest()
+                file_type = file.content_type
                 flash('Saved file "%s" (%s) with checksum "%s"' % (file.filename, file_type, file_md5) )
                 cur.execute('INSERT INTO df_datafiles(filename, description) VALUES (%s,%s)', 
                     (filename, file_desc) )

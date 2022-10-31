@@ -18,7 +18,7 @@ bp = Blueprint('analyze', __name__)
 
 # Show the columns available in the file and choose one to evaluate
 @bp.route('/analyze/<int:id>', methods=['GET', 'POST'])
-def analyze_file(id, delimiter=None):
+def analyze_file(id, delimiter='\t'):
     file_record = get_file(id)
     filepath = os.path.join(current_app.config['UPLOAD_LOCATION'], file_record['filename'])
     
