@@ -44,7 +44,7 @@ def upload_file():
                 flash('File "%s" already exists!' % fullpath)
 
             file.save(fullpath)
-	    file_seek(0)
+            file.seek(0)
             file_data = file.read()
             file_md5 = hashlib.md5(file_data).hexdigest()
             
