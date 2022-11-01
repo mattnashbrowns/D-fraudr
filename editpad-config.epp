@@ -1,9 +1,9 @@
 ﻿[EditPad Project]
 Managed=0
 BookmarksProjectWide=0
-FirstFileTab=14
-TabIndex=20
-FileCount=23
+FirstFileTab=10
+TabIndex=15
+FileCount=24
 RemovedCount=4
 
 [File0]
@@ -65,12 +65,12 @@ TailInterval=0
 TailAppend=0
 
 [File1]
-DataLen=496
+DataLen=463
 TopChar=0
-SelStart=472
-SelStop=472
+SelStart=397
+SelStop=397
 RectSel=0
-CaretPos=472
+CaretPos=397
 CaretVisible=1
 TopCharAlt=0
 SelStartAlt=0
@@ -123,12 +123,12 @@ TailInterval=0
 TailAppend=0
 
 [File2]
-DataLen=1553
-TopChar=921
-SelStart=1553
-SelStop=1553
+DataLen=1537
+TopChar=902
+SelStart=1040
+SelStop=1040
 RectSel=0
-CaretPos=1553
+CaretPos=1040
 CaretVisible=1
 TopCharAlt=0
 SelStartAlt=0
@@ -239,12 +239,12 @@ TailInterval=0
 TailAppend=0
 
 [File4]
-DataLen=116
+DataLen=64
 TopChar=0
-SelStart=116
-SelStop=116
+SelStart=64
+SelStop=16
 RectSel=0
-CaretPos=116
+CaretPos=16
 CaretVisible=1
 TopCharAlt=0
 SelStartAlt=0
@@ -355,12 +355,12 @@ TailInterval=0
 TailAppend=0
 
 [File6]
-DataLen=96
+DataLen=97
 TopChar=0
-SelStart=62
-SelStop=62
+SelStart=18
+SelStop=18
 RectSel=0
-CaretPos=62
+CaretPos=18
 CaretVisible=1
 TopCharAlt=0
 SelStartAlt=0
@@ -413,12 +413,12 @@ TailInterval=0
 TailAppend=0
 
 [File7]
-DataLen=242
+DataLen=119
 TopChar=0
-SelStart=242
-SelStop=242
+SelStart=72
+SelStop=72
 RectSel=0
-CaretPos=242
+CaretPos=72
 CaretVisible=1
 TopCharAlt=0
 SelStartAlt=0
@@ -471,6 +471,64 @@ TailInterval=0
 TailAppend=0
 
 [File8]
+DataLen=333
+TopChar=0
+SelStart=333
+SelStop=333
+RectSel=0
+CaretPos=333
+CaretVisible=1
+TopCharAlt=0
+SelStartAlt=0
+SelStopAlt=0
+RectSelAlt=0
+CaretPosAlt=0
+CaretVisibleAlt=0
+BookmarkCount=10
+Bookmark1=-1
+Bookmark2=-1
+Bookmark3=-1
+Bookmark4=-1
+Bookmark5=-1
+Bookmark6=-1
+Bookmark7=-1
+Bookmark8=-1
+Bookmark9=-1
+Bookmark10=-1
+Folding=
+FileType=markdown
+DataFormat=
+TextLayout=
+TextLayoutToggleRTL=
+AutoEditCase=0
+AutoEditQuotes=0
+AutoEditTrim=0
+AutoEditBrackets=0
+AutoEditBreak=0
+AutoIndent=0
+KeepIndent=0
+NumberLines=0
+WordWrap=0
+WordWrapIndent=0
+NumberColumns=0
+ShowSpaces=0
+ShowLineBreaks=0
+ShowIndent=0
+LiveSpell=0
+WrapPos=-2
+RecordSize=-2
+HexMode=0
+HexSections=-2
+ProjectStatus=0
+RelativeFilename=README.md
+Filename=D:\matt\python\l7\D-fraudr\README.md
+FTPFilename=
+ForcedReadOnly=0
+TailSize=0
+TailInterval=0
+TailAppend=0
+
+[File9]
 DataLen=259
 TopChar=0
 SelStart=215
@@ -528,7 +586,7 @@ TailSize=0
 TailInterval=0
 TailAppend=0
 
-[File9]
+[File10]
 DataLen=48
 TopChar=0
 SelStart=48
@@ -586,13 +644,13 @@ TailSize=0
 TailInterval=0
 TailAppend=0
 
-[File10]
+[File11]
 DataLen=802
 TopChar=0
-SelStart=289
-SelStop=289
+SelStart=46
+SelStop=49
 RectSel=0
-CaretPos=289
+CaretPos=49
 CaretVisible=1
 TopCharAlt=0
 SelStartAlt=0
@@ -644,13 +702,13 @@ TailSize=0
 TailInterval=0
 TailAppend=0
 
-[File11]
-DataLen=175
+[File12]
+DataLen=182
 TopChar=0
-SelStart=104
-SelStop=104
+SelStart=178
+SelStop=178
 RectSel=0
-CaretPos=104
+CaretPos=178
 CaretVisible=1
 TopCharAlt=0
 SelStartAlt=0
@@ -702,7 +760,7 @@ TailSize=0
 TailInterval=0
 TailAppend=0
 
-[File12]
+[File13]
 DataLen=146
 TopChar=0
 SelStart=75
@@ -760,7 +818,7 @@ TailSize=0
 TailInterval=0
 TailAppend=0
 
-[File13]
+[File14]
 DataLen=202
 TopChar=0
 SelStart=0
@@ -818,14 +876,14 @@ TailSize=0
 TailInterval=0
 TailAppend=0
 
-[File14]
-DataLen=2433
-TopChar=0
-SelStart=1695
-SelStop=1697
+[File15]
+DataLen=2758
+TopChar=982
+SelStart=2653
+SelStop=2653
 RectSel=0
-CaretPos=1697
-CaretVisible=0
+CaretPos=2653
+CaretVisible=1
 TopCharAlt=0
 SelStartAlt=0
 SelStopAlt=0
@@ -876,13 +934,13 @@ TailSize=0
 TailInterval=0
 TailAppend=0
 
-[File15]
+[File16]
 DataLen=4208
-TopChar=2257
-SelStart=2922
-SelStop=2922
+TopChar=2159
+SelStart=3084
+SelStop=3087
 RectSel=0
-CaretPos=2922
+CaretPos=3087
 CaretVisible=1
 TopCharAlt=0
 SelStartAlt=0
@@ -934,13 +992,13 @@ TailSize=0
 TailInterval=0
 TailAppend=0
 
-[File16]
+[File17]
 DataLen=1037
 TopChar=0
-SelStart=715
-SelStop=715
+SelStart=627
+SelStop=630
 RectSel=0
-CaretPos=715
+CaretPos=630
 CaretVisible=1
 TopCharAlt=0
 SelStartAlt=0
@@ -992,7 +1050,7 @@ TailSize=0
 TailInterval=0
 TailAppend=0
 
-[File17]
+[File18]
 DataLen=504
 TopChar=0
 SelStart=179
@@ -1050,7 +1108,7 @@ TailSize=0
 TailInterval=0
 TailAppend=0
 
-[File18]
+[File19]
 DataLen=700
 TopChar=0
 SelStart=620
@@ -1108,7 +1166,7 @@ TailSize=0
 TailInterval=0
 TailAppend=0
 
-[File19]
+[File20]
 DataLen=713
 TopChar=0
 SelStart=698
@@ -1166,7 +1224,7 @@ TailSize=0
 TailInterval=0
 TailAppend=0
 
-[File20]
+[File21]
 DataLen=567
 TopChar=0
 SelStart=495
@@ -1224,7 +1282,7 @@ TailSize=0
 TailInterval=0
 TailAppend=0
 
-[File21]
+[File22]
 DataLen=288
 TopChar=0
 SelStart=0
@@ -1282,7 +1340,7 @@ TailSize=0
 TailInterval=0
 TailAppend=0
 
-[File22]
+[File23]
 DataLen=1439
 TopChar=580
 SelStart=1343
