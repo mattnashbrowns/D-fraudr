@@ -20,6 +20,6 @@ RUN rm -f *sqlite
 
 USER dfraudr
 WORKDIR /D-Fraudr
-RUN /D-Fraudr/build/dfraudr-build.sh
+RUN /D-Fraudr/install/dfraudr-build.sh
 
 CMD  "/D-Fraudr/startup.sh"
