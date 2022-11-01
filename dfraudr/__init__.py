@@ -29,7 +29,7 @@ def create_app(test_config=None):
     from . import upload
     app.register_blueprint(upload.bp)
     app.add_url_rule('/upload', endpoint='upload_file')
-    app.add_url_rule('/', endpoint='files'
+    app.add_url_rule('/', endpoint='files')
     
     from . import analyze
     app.register_blueprint(analyze.bp)
