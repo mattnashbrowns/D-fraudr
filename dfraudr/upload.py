@@ -44,19 +44,15 @@ def upload_file():
                 flash('File "%s" already exists!' % fullpath)
 
             file.save(fullpath)
+	    file_seek(0)
             file_data = file.read()
             file_md5 = hashlib.md5(file_data).hexdigest()
             
-            already_file = cur.execute('SELECT * FROM df_datafiles WHERE md5sum=?', (file_md5,)).fetchone()
-            
-            if already_file:
-                flash('A file with checksum "%s" already exists, not inserting' % file_md5)
-            else:
-                file_type = file.content_type
-                flash('Saved file "%s" (%s) with checksum "%s"' % (file.filename, file_type, file_md5) )
-                cur.execute('INSERT INTO df_datafiles(filename, description, md5sum) VALUES (?,?,?)', 
-                    (filename, file_desc, file_md5) )
-                cur.commit()
+            file_type = file.content_type
+            flash('Saved file "%s" (%s) with checksum "%s"' % (file.filename, file_type, file_md5) )
+            cur.execute('INSERT INTO df_datafiles(filename, description, md5sum) VALUES (?,?,?)', 
+                  (filename, file_desc, file_md5) )
+            cur.commit()
         
             
             return redirect(url_for('upload.files'))
