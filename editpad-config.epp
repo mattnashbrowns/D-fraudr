@@ -355,12 +355,12 @@ TailInterval=0
 TailAppend=0
 
 [File6]
-DataLen=115
+DataLen=96
 TopChar=0
-SelStart=34
-SelStop=73
+SelStart=62
+SelStop=62
 RectSel=0
-CaretPos=73
+CaretPos=62
 CaretVisible=1
 TopCharAlt=0
 SelStartAlt=0
