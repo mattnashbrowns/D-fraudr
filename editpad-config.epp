@@ -1,10 +1,10 @@
 ﻿[EditPad Project]
 Managed=0
 BookmarksProjectWide=0
-FirstFileTab=0
-TabIndex=6
+FirstFileTab=14
+TabIndex=20
 FileCount=23
-RemovedCount=3
+RemovedCount=4
 
 [File0]
 DataLen=879
@@ -471,12 +471,12 @@ TailInterval=0
 TailAppend=0
 
 [File8]
-DataLen=332
+DataLen=259
 TopChar=0
-SelStart=326
-SelStop=326
+SelStart=215
+SelStop=215
 RectSel=0
-CaretPos=326
+CaretPos=215
 CaretVisible=1
 TopCharAlt=0
 SelStartAlt=0
@@ -529,12 +529,12 @@ TailInterval=0
 TailAppend=0
 
 [File9]
-DataLen=113
+DataLen=48
 TopChar=0
-SelStart=47
-SelStop=47
+SelStart=48
+SelStop=48
 RectSel=0
-CaretPos=47
+CaretPos=48
 CaretVisible=1
 TopCharAlt=0
 SelStartAlt=0
@@ -587,12 +587,12 @@ TailInterval=0
 TailAppend=0
 
 [File10]
-DataLen=950
+DataLen=802
 TopChar=0
-SelStart=204
-SelStop=215
+SelStart=289
+SelStop=289
 RectSel=0
-CaretPos=215
+CaretPos=289
 CaretVisible=1
 TopCharAlt=0
 SelStartAlt=0
@@ -645,12 +645,12 @@ TailInterval=0
 TailAppend=0
 
 [File11]
-DataLen=402
+DataLen=175
 TopChar=0
-SelStart=0
-SelStop=0
+SelStart=104
+SelStop=104
 RectSel=0
-CaretPos=0
+CaretPos=104
 CaretVisible=1
 TopCharAlt=0
 SelStartAlt=0
@@ -819,12 +819,12 @@ TailInterval=0
 TailAppend=0
 
 [File14]
-DataLen=2493
+DataLen=2433
 TopChar=0
-SelStart=1616
-SelStop=1616
+SelStart=1695
+SelStop=1697
 RectSel=0
-CaretPos=1616
+CaretPos=1697
 CaretVisible=0
 TopCharAlt=0
 SelStartAlt=0
@@ -877,12 +877,12 @@ TailInterval=0
 TailAppend=0
 
 [File15]
-DataLen=4220
-TopChar=3068
-SelStart=4002
-SelStop=4002
+DataLen=4208
+TopChar=2257
+SelStart=2922
+SelStop=2922
 RectSel=0
-CaretPos=4002
+CaretPos=2922
 CaretVisible=1
 TopCharAlt=0
 SelStartAlt=0
@@ -1341,6 +1341,57 @@ TailInterval=0
 TailAppend=0
 
 [Removed0]
+DataLen=950
+TopChar=0
+SelStart=204
+SelStop=215
+RectSel=0
+CaretPos=215
+CaretVisible=1
+TopCharAlt=0
+SelStartAlt=0
+SelStopAlt=0
+RectSelAlt=0
+CaretPosAlt=0
+CaretVisibleAlt=0
+BookmarkCount=10
+Bookmark1=-1
+Bookmark2=-1
+Bookmark3=-1
+Bookmark4=-1
+Bookmark5=-1
+Bookmark6=-1
+Bookmark7=-1
+Bookmark8=-1
+Bookmark9=-1
+Bookmark10=-1
+Folding=
+FileType=py
+DataFormat=
+TextLayout=
+TextLayoutToggleRTL=
+AutoEditCase=0
+AutoEditQuotes=0
+AutoEditTrim=0
+AutoEditBrackets=0
+AutoEditBreak=0
+AutoIndent=0
+KeepIndent=0
+NumberLines=0
+WordWrap=0
+WordWrapIndent=0
+NumberColumns=0
+ShowSpaces=0
+ShowLineBreaks=0
+ShowIndent=0
+LiveSpell=0
+WrapPos=-1
+RecordSize=-2
+HexMode=0
+HexSections=-2
+Filename=D:\matt\python\l7\D-fraudr\dfraudr\db.py
+
+[Removed1]
 DataLen=120
 TopChar=0
 SelStart=15
@@ -1391,7 +1442,7 @@ HexMode=0
 HexSections=-2
 Filename=D:\matt\python\l7\D-fraudr\build\plain-dfraudr.sh
 
-[Removed1]
+[Removed2]
 DataLen=105
 TopChar=0
 SelStart=105
@@ -1442,7 +1493,7 @@ HexMode=0
 HexSections=-2
 Filename=D:\matt\python\l7\D-fraudr\build\dfraudr-build.sh
 
-[Removed2]
+[Removed3]
 DataLen=92
 TopChar=0
 SelStart=0

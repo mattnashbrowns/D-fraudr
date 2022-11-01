@@ -91,8 +91,7 @@ def analyze_column(file_id, column_name):
 # Retrieves the file's row from the DB and returns a DictRow object
 def get_file(id):
     cursor = get_db()
-    cursor.execute('SELECT * FROM df_datafiles WHERE id=%s', (id,))
-    file = cursor.fetchone()
+    file = cursor.execute('SELECT * FROM df_datafiles WHERE id=?', (id,)).fetchone()
     return file
     
 def get_file_dataframe(filename, delimiter=None):

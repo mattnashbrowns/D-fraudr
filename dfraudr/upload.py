@@ -43,15 +43,16 @@ def upload_file():
             
             if file_exists(fullpath):
                 flash('File "%s" already exists!' % fullpath)
-            else:
-                file.save(fullpath)
-                file_data = file.read()
-                file_md5 = hashlib.md5(file_data).hexdigest()
-                file_type = file.content_type
-                flash('Saved file "%s" (%s) with checksum "%s"' % (file.filename, file_type, file_md5) )
-                cur.execute('INSERT INTO df_datafiles(filename, description) VALUES (%s,%s)', 
-                    (filename, file_desc) )
-            
+
+            file.save(fullpath)
+            file_data = file.read()
+            file_md5 = hashlib.md5(file_data).hexdigest()
+            file_type = file.content_type
+            flash('Saved file "%s" (%s) with checksum "%s"' % (file.filename, file_type, file_md5) )
+            cur.execute('INSERT INTO df_datafiles(filename, description) VALUES (?,?)', 
+                (filename, file_desc) )
+            cur.commit()
+        
             
             return redirect(url_for('upload.files'))
     return render_template('upload.html')
@@ -60,8 +61,7 @@ def upload_file():
 @bp.route('/files', methods=['GET','POST'])
 def files():
   cursor = get_db()
-  cursor.execute( 'SELECT id, filename, description, md5sum from df_datafiles' )
-  files = cursor.fetchall()
+  files = cursor.execute( 'SELECT id, filename, description, md5sum from df_datafiles' ).fetchall()
   
   if (files):
     return render_template('files.html', filelist=files)    
