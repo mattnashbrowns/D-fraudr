@@ -1,0 +1,3 @@
+CREATE DATABASE dfraudr;
+CREATE USER dfraud_user WITH ENCRYPTED PASSWORD 'dfraud_pass';
+GRANT ALL PRIVILEGES ON DATABASE dfraudr TO dfraud_user;
