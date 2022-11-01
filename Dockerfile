@@ -15,15 +15,9 @@ USER dfraudr
 WORKDIR /D-Fraudr
 COPY . .
 
-#USER postgres
-#WORKDIR /D-Fraudr
-#RUN  /D-Fraudr/build/postgres-build.sh
-
-#USER dfraudr
-#WORKDIR /D-Fraudr
-#RUN build/dfraudr-build.sh
-
-
 USER root
-CMD "/D-Fraudr/startup.sh"
-#CMD [ "python3", "-m" , "flask", “--app”, “dfraudr”, "run", "--host=0.0.0.0"]
+WORKDIR /D-Fraudr
+RUN build/root-build.sh
+RUN chown -R postgres:postgres /var/run/postgresql
+
+CMD  "/D-Fraudr/startup.sh"
