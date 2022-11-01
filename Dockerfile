@@ -16,7 +16,7 @@ COPY . .
 
 USER root
 WORKDIR /D-Fraudr
-RUN rm *sqlite
+RUN rm -f *sqlite
 
 USER dfraudr
 WORKDIR /D-Fraudr
