@@ -9,6 +9,6 @@ SECRET_KEY = environ.get('SECRET_KEY')
 
 DATABASE='dfraudr/dfraudr.sqlite'
 
-UPLOAD_LOCATION = 'instance/uploads'
+UPLOAD_LOCATION='instance/uploads'
 
     

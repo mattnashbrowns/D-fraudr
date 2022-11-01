@@ -11,7 +11,8 @@ def create_app(test_config=None):
     else:
         # Load the test config if passed in
         app.config.from_mapping(test_config)
-        
+    
+    app.config['SECRET_KEY'] = 'secret'
     # Create the instance folder
     try:
         os.makedirs(app.instance_path)

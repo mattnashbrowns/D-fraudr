@@ -17,7 +17,7 @@ from io import BytesIO
 app = Flask(__name__)
 
 bp = Blueprint('analyze', __name__)
-
+UPLOAD_LOCATION='instance/uploads'
 
 
 # Show the columns available in the file and choose one to evaluate
@@ -96,7 +96,7 @@ def get_file(id):
     
 def get_file_dataframe(filename, delimiter=None):
     # Build the path to the uploaded file
-    filepath = os.path.join(current_app.config['UPLOAD_LOCATION'], filename )
+    filepath = os.path.join(UPLOAD_LOCATION, filename )
     # Read the file into a pandas dataframe
     file_df = pd.read_csv(filepath, sep = delimiter)
     

@@ -11,7 +11,7 @@ import hashlib
 app = Flask(__name__)
 
 ALLOWED_EXTENSIONS = {'txt', 'csv', 'tsv'}
-
+UPLOAD_LOCATION='instance/uploads'
 
 bp = Blueprint('upload', __name__)
 
@@ -20,7 +20,6 @@ def allowed_file(filename):
 
 @bp.route('/upload', methods=['GET', 'POST'])
 def upload_file():
-    UPLOAD_LOCATION = current_app.config['UPLOAD_LOCATION']
     if request.method == 'POST':
         cur = get_db()
         file_desc = 'Untitled'
@@ -48,7 +47,7 @@ def upload_file():
             file_data = file.read()
             file_md5 = hashlib.md5(file_data).hexdigest()
             
-            already_file = cur.execute('SELECT * FROM df_datafiles WHERE md5sum=?', file_md5).fetchone()
+            already_file = cur.execute('SELECT * FROM df_datafiles WHERE md5sum=?', (file_md5,)).fetchone()
             
             if already_file:
                 flash('A file with checksum "%s" already exists, not inserting' % file_md5)
