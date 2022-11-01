@@ -3,13 +3,15 @@
 {% block header %}
   <h1>{% block title %}Uploaded files{% endblock %}</h1>
 {% endblock %}
-
+{% block nav %}
+   <p><a href="{{ url_for('upload.upload_file') }}">Upload</a>
+{% endblock %}
 {% block content %}
 	
     {% for file in filelist %}
 		<article class="file">
 			<div>
-				<table class=column_detail>
+				<table class="column_detail">
 					<tr>
 						<td><h2>File ID: {{ file['id'] }}</h2>
 						<td><h1><a class="action" href="{{ url_for('analyze.analyze_file', id=file['id']) }}">{{ file['filename'] }}</a></h1>
