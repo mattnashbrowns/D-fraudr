@@ -22,13 +22,14 @@ def create_app(test_config=None):
     @app.route('/hello')
     def hello():
         return 'Look out, scammers!'
-        
+    
     from . import db
     db.init_app(app)
     
     from . import upload
     app.register_blueprint(upload.bp)
     app.add_url_rule('/upload', endpoint='upload_file')
+    app.add_url_rule('/', endpoint='files'
     
     from . import analyze
     app.register_blueprint(analyze.bp)
