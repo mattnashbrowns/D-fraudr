@@ -16,6 +16,7 @@ RUN chown -R dfraudr /D-Fraudr
 
 USER dfraudr
 WORKDIR /D-Fraudr
+RUN mkdir -p instance/uploads
 RUN /D-Fraudr/install/dfraudr-build.sh
 
 CMD  "/D-Fraudr/startup.sh"
