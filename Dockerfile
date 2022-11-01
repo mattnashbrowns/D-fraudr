@@ -10,13 +10,9 @@ RUN apt-get -y install sudo
 
 RUN useradd -ms /bin/bash dfraudr
 
-USER dfraudr
 WORKDIR /D-Fraudr
-COPY . .
-
-USER root
-WORKDIR /D-Fraudr
-RUN rm -f *sqlite
+COPY .  .
+RUN chown -R dfraudr /D-Fraudr
 
 USER dfraudr
 WORKDIR /D-Fraudr
